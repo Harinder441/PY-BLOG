@@ -5,13 +5,14 @@ from auto_email import send_mail
 my_post = Post()
 app = Flask(__name__)
 
-
+#Render Headlines and subheadlines of your Blogs
 @app.route('/')
 def home():
     posts = my_post.get_allposts()
     return render_template("index.html", posts=posts)
 
 
+#get contact detail of your user and send email verification to user
 @app.route("/contact",methods=["GET","POST"])
 def get_contact():
     if request.method=="POST":
@@ -26,6 +27,7 @@ def get_contact():
     return render_template("contact.html")
 
 
+#render the about page
 @app.route("/about")
 def get_about():
     return render_template("about.html")
