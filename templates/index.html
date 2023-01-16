@@ -14,14 +14,14 @@
                     {% for post in posts[:3]: %}
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <a href="{{url_for('get_post',id_= post['id']) }}">
-                            <h2 class="post-title">{{post['title']}}</h2>
-                            <h3 class="post-subtitle">{{post['subtitle']}}</h3>
+                        <a href="{{url_for('get_post',id_= post.id) }}">
+                            <h2 class="post-title">{{post.title}}</h2>
+                            <h3 class="post-subtitle">{{post.subtitle}}</h3>
                         </a>
                         <p class="post-meta">
                             Posted by
-                            <a href="#!">Harinder Singh</a>
-                            on September 24, 2022
+                            <a href="#!">{{post.author}}</a>
+                            on {{post.date}}
                         </p>
                     </div>
                     <!-- Divider-->
@@ -29,6 +29,10 @@
                     {% endfor %}
                     <!-- Pager-->
                     <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="{{url_for('get_allposts')}}">Older Posts →</a></div>
+                   <!-- New Post -->
+                    <div class="clearfix">
+                        <a class="btn btn-primary float-right" href="#">Create New Post</a>
+                    </div>
                 </div>
             </div>
         </div>

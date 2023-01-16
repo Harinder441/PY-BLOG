@@ -15,13 +15,13 @@
                     <!-- Post preview-->
                     <div class="post-preview">
                         <a href="{{url_for('get_post',id_= post['id']) }}">
-                            <h2 class="post-title">{{post['title']}}</h2>
-                            <h3 class="post-subtitle">{{post['subtitle']}}</h3>
+                            <h2 class="post-title">{{post.title}}</h2>
+                            <h3 class="post-subtitle">{{post.subtitle}}</h3>
                         </a>
                         <p class="post-meta">
                             Posted by
-                            <a href="#!">Harinder Singh</a>
-                            on September 24, 2022
+                            <a href="#!">{{post.author}}</a>
+                            on {{post.date}}
                         </p>
                     </div>
                     <!-- Divider-->

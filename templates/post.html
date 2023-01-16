@@ -4,7 +4,7 @@
     {% include 'head.html' %}
 </head>
 <body>
-{% with heading =post['title'] ,subheading=post['subtitle'] %}
+{% with heading =post.title ,subheading=post.subtitle %}
 {% include 'header.html' %}
 {% endwith %}
 
@@ -14,7 +14,7 @@
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
-                <p>{{post['body']}}</p>
+                <div>{{post.body}}</div>
             </div>
         </div>
     </div>
